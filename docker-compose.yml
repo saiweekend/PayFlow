@@ -1,0 +1,18 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - '3000:3000'
+    environment:
+      - PORT=3000
+      - JWT_SECRET=${JWT_SECRET:-dev-only-secret-change-me}
+      - CORS_ORIGINS=http://localhost:5173
+      - NODE_ENV=production
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - '5173:80'
+    depends_on:
+      - backend
