@@ -35,26 +35,30 @@ const shareSumCheck = computed(() => shares.value.reduce((sum, s) => sum + s, 0)
 
 <template>
   <div class="space-y-6">
-    <h1 class="text-xl font-semibold text-slate-900">Split a bill</h1>
+    <h1 class="text-xl font-semibold text-slate-900">
+      Split a bill
+    </h1>
 
     <div class="bg-white rounded-2xl border border-slate-200 p-6 space-y-4">
       <div>
-        <label class="block text-sm font-medium text-slate-700 mb-1" for="total"
-          >Total amount (JPY)</label
-        >
+        <label
+          class="block text-sm font-medium text-slate-700 mb-1"
+          for="total"
+        >Total amount (JPY)</label>
         <input
           id="total"
           v-model="totalRaw"
           inputmode="numeric"
           placeholder="3000"
           class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-500"
-        />
+        >
       </div>
 
       <div>
-        <label class="block text-sm font-medium text-slate-700 mb-1" for="people"
-          >Split between</label
-        >
+        <label
+          class="block text-sm font-medium text-slate-700 mb-1"
+          for="people"
+        >Split between</label>
         <input
           id="people"
           v-model.number="participantCount"
@@ -62,11 +66,14 @@ const shareSumCheck = computed(() => shares.value.reduce((sum, s) => sum + s, 0)
           min="2"
           max="20"
           class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-500"
-        />
+        >
       </div>
     </div>
 
-    <div v-if="shares.length" class="bg-white rounded-2xl border border-slate-200 p-6">
+    <div
+      v-if="shares.length"
+      class="bg-white rounded-2xl border border-slate-200 p-6"
+    >
       <p class="text-sm text-slate-500 mb-3">
         {{ participantCount }} people · total {{ formatYen(totalMinor ?? 0) }}
       </p>

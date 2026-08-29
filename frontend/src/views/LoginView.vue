@@ -30,11 +30,21 @@ async function onSubmit(): Promise<void> {
 
 <template>
   <div class="min-h-screen flex items-center justify-center px-4">
-    <form class="w-full max-w-sm bg-white rounded-2xl shadow-sm p-8" @submit.prevent="onSubmit">
-      <h1 class="text-2xl font-semibold text-brand-600 mb-1">PayFlow</h1>
-      <p class="text-sm text-slate-500 mb-6">Sign in to your account</p>
+    <form
+      class="w-full max-w-sm bg-white rounded-2xl shadow-sm p-8"
+      @submit.prevent="onSubmit"
+    >
+      <h1 class="text-2xl font-semibold text-brand-600 mb-1">
+        PayFlow
+      </h1>
+      <p class="text-sm text-slate-500 mb-6">
+        Sign in to your account
+      </p>
 
-      <label class="block text-sm font-medium text-slate-700 mb-1" for="email">Email</label>
+      <label
+        class="block text-sm font-medium text-slate-700 mb-1"
+        for="email"
+      >Email</label>
       <input
         id="email"
         v-model="email"
@@ -42,9 +52,12 @@ async function onSubmit(): Promise<void> {
         required
         autocomplete="username"
         class="w-full mb-4 px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-500"
-      />
+      >
 
-      <label class="block text-sm font-medium text-slate-700 mb-1" for="password">Password</label>
+      <label
+        class="block text-sm font-medium text-slate-700 mb-1"
+        for="password"
+      >Password</label>
       <input
         id="password"
         v-model="password"
@@ -52,10 +65,18 @@ async function onSubmit(): Promise<void> {
         required
         autocomplete="current-password"
         class="w-full mb-2 px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-500"
-      />
-      <p class="text-xs text-slate-400 mb-4">Demo password: password123</p>
+      >
+      <p class="text-xs text-slate-400 mb-4">
+        Demo password: password123
+      </p>
 
-      <p v-if="error" class="mb-4 text-sm text-red-600" role="alert">{{ error }}</p>
+      <p
+        v-if="error"
+        class="mb-4 text-sm text-red-600"
+        role="alert"
+      >
+        {{ error }}
+      </p>
 
       <button
         type="submit"

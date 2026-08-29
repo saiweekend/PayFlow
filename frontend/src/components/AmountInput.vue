@@ -35,7 +35,10 @@ const preview = computed(() => (parsed.value !== null ? formatYen(parsed.value) 
 
 <template>
   <div>
-    <label class="block text-sm font-medium text-slate-700 mb-1" for="amount">Amount (JPY)</label>
+    <label
+      class="block text-sm font-medium text-slate-700 mb-1"
+      for="amount"
+    >Amount (JPY)</label>
     <div class="relative">
       <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">¥</span>
       <input
@@ -53,9 +56,21 @@ const preview = computed(() => (parsed.value !== null ? formatYen(parsed.value) 
         :aria-invalid="Boolean(error)"
         aria-describedby="amount-help"
         @input="onInput"
-      />
+      >
     </div>
-    <p v-if="error" id="amount-help" class="mt-1 text-sm text-red-600">{{ error }}</p>
-    <p v-else-if="preview" id="amount-help" class="mt-1 text-sm text-slate-500">{{ preview }}</p>
+    <p
+      v-if="error"
+      id="amount-help"
+      class="mt-1 text-sm text-red-600"
+    >
+      {{ error }}
+    </p>
+    <p
+      v-else-if="preview"
+      id="amount-help"
+      class="mt-1 text-sm text-slate-500"
+    >
+      {{ preview }}
+    </p>
   </div>
 </template>

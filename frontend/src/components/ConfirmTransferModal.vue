@@ -27,23 +27,47 @@ const emit = defineEmits<{
       @keydown.esc="emit('cancel')"
     >
       <div class="bg-white rounded-2xl shadow-xl max-w-sm w-full p-6">
-        <h2 id="confirm-title" class="text-lg font-semibold text-slate-900">Confirm transfer</h2>
+        <h2
+          id="confirm-title"
+          class="text-lg font-semibold text-slate-900"
+        >
+          Confirm transfer
+        </h2>
         <dl class="mt-4 space-y-2 text-sm">
           <div class="flex justify-between">
-            <dt class="text-slate-500">To</dt>
-            <dd class="font-medium text-slate-800">{{ recipientId }}</dd>
+            <dt class="text-slate-500">
+              To
+            </dt>
+            <dd class="font-medium text-slate-800">
+              {{ recipientId }}
+            </dd>
           </div>
           <div class="flex justify-between">
-            <dt class="text-slate-500">Amount</dt>
-            <dd class="font-semibold text-slate-900">{{ formatYen(amountMinor) }}</dd>
+            <dt class="text-slate-500">
+              Amount
+            </dt>
+            <dd class="font-semibold text-slate-900">
+              {{ formatYen(amountMinor) }}
+            </dd>
           </div>
-          <div v-if="memo" class="flex justify-between gap-4">
-            <dt class="text-slate-500 shrink-0">Memo</dt>
-            <dd class="text-slate-800 text-right">{{ memo }}</dd>
+          <div
+            v-if="memo"
+            class="flex justify-between gap-4"
+          >
+            <dt class="text-slate-500 shrink-0">
+              Memo
+            </dt>
+            <dd class="text-slate-800 text-right">
+              {{ memo }}
+            </dd>
           </div>
         </dl>
 
-        <p v-if="errorMessage" class="mt-4 text-sm text-red-600" role="alert">
+        <p
+          v-if="errorMessage"
+          class="mt-4 text-sm text-red-600"
+          role="alert"
+        >
           {{ errorMessage }}
         </p>
 

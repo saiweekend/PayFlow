@@ -62,7 +62,10 @@ const bottomSpacerHeight = computed(
     :style="{ height: `${viewportHeight}px` }"
     @scroll="onScroll"
   >
-    <div :style="{ height: `${topSpacerHeight}px` }" aria-hidden="true" />
+    <div
+      :style="{ height: `${topSpacerHeight}px` }"
+      aria-hidden="true"
+    />
     <ul class="px-4">
       <TransactionListItem
         v-for="tx in visibleItems"
@@ -71,6 +74,9 @@ const bottomSpacerHeight = computed(
         :current-user-id="currentUserId"
       />
     </ul>
-    <div :style="{ height: `${bottomSpacerHeight}px` }" aria-hidden="true" />
+    <div
+      :style="{ height: `${bottomSpacerHeight}px` }"
+      aria-hidden="true"
+    />
   </div>
 </template>

@@ -66,20 +66,23 @@ function onScanned(recipientId: string): void {
 
 <template>
   <div class="space-y-6">
-    <h1 class="text-xl font-semibold text-slate-900">Send money</h1>
+    <h1 class="text-xl font-semibold text-slate-900">
+      Send money
+    </h1>
 
     <div class="bg-white rounded-2xl border border-slate-200 p-6 space-y-4">
       <div>
-        <label class="block text-sm font-medium text-slate-700 mb-1" for="recipient"
-          >Recipient</label
-        >
+        <label
+          class="block text-sm font-medium text-slate-700 mb-1"
+          for="recipient"
+        >Recipient</label>
         <div class="flex gap-2">
           <input
             id="recipient"
             v-model="form.recipientId"
             placeholder="usr_2"
             class="flex-1 px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-500"
-          />
+          >
           <button
             type="button"
             class="px-4 rounded-lg border border-slate-300 text-sm font-medium text-slate-600 hover:bg-slate-50"
@@ -88,23 +91,30 @@ function onScanned(recipientId: string): void {
             Scan QR
           </button>
         </div>
-        <p v-if="validation.errors.recipientId" class="mt-1 text-sm text-red-600">
+        <p
+          v-if="validation.errors.recipientId"
+          class="mt-1 text-sm text-red-600"
+        >
           {{ validation.errors.recipientId }}
         </p>
       </div>
 
-      <AmountInput v-model="form.amountMinor" :error="validation.errors.amountMinor" />
+      <AmountInput
+        v-model="form.amountMinor"
+        :error="validation.errors.amountMinor"
+      />
 
       <div>
-        <label class="block text-sm font-medium text-slate-700 mb-1" for="memo"
-          >Memo (optional)</label
-        >
+        <label
+          class="block text-sm font-medium text-slate-700 mb-1"
+          for="memo"
+        >Memo (optional)</label>
         <input
           id="memo"
           v-model="form.memo"
           maxlength="140"
           class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-500"
-        />
+        >
       </div>
 
       <button
@@ -128,6 +138,10 @@ function onScanned(recipientId: string): void {
       @cancel="showConfirm = false"
     />
 
-    <QrScannerModal :open="showQr" @scanned="onScanned" @cancel="showQr = false" />
+    <QrScannerModal
+      :open="showQr"
+      @scanned="onScanned"
+      @cancel="showQr = false"
+    />
   </div>
 </template>

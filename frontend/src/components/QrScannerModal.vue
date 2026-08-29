@@ -51,10 +51,19 @@ watch(
           class="mx-auto h-56 w-56 rounded-2xl border-2 border-dashed flex items-center justify-center"
           :class="status === 'found' ? 'border-emerald-400' : 'border-white/60'"
         >
-          <span v-if="status === 'scanning'" class="animate-pulse text-sm">Scanning…</span>
-          <span v-else class="text-sm text-emerald-300">Code found ✓</span>
+          <span
+            v-if="status === 'scanning'"
+            class="animate-pulse text-sm"
+          >Scanning…</span>
+          <span
+            v-else
+            class="text-sm text-emerald-300"
+          >Code found ✓</span>
         </div>
-        <button class="mt-6 text-sm text-white/70 underline" @click="emit('cancel')">
+        <button
+          class="mt-6 text-sm text-white/70 underline"
+          @click="emit('cancel')"
+        >
           Cancel
         </button>
       </div>

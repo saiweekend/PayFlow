@@ -17,11 +17,18 @@ onMounted(() => {
 <template>
   <div class="space-y-6">
     <div>
-      <p class="text-sm text-slate-500">Welcome back</p>
-      <h1 class="text-xl font-semibold text-slate-900">{{ auth.email }}</h1>
+      <p class="text-sm text-slate-500">
+        Welcome back
+      </p>
+      <h1 class="text-xl font-semibold text-slate-900">
+        {{ auth.email }}
+      </h1>
     </div>
 
-    <BalanceCard :balance-minor="walletData?.balanceMinor ?? 0" :loading="loading" />
+    <BalanceCard
+      :balance-minor="walletData?.balanceMinor ?? 0"
+      :loading="loading"
+    />
 
     <div class="grid grid-cols-3 gap-3">
       <RouterLink
